@@ -1,5 +1,6 @@
+use std::env;
+
 fn main() {
-    println!("test");
-    println!("test");
+    let args: Vec<String> = env::args().collect();
 
 }
