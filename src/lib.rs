@@ -3,8 +3,7 @@ use std::fs;
 use std::env;
 
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
-    let contents = fs::read_to_string(config.filename)
-        .expect("Something went wrong reading the file");
+    let contents = fs::read_to_string(config.filename)?;
 
     let results = if config.ignore_case {
         search_case_insensitive(&config.query, &contents)
